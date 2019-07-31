@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+				.box{
+					height: 3000px;
+					width: 100%;
+					/*border: 1px solid red;*/
+					position: relative;
+					
+				}
+			header{
+				height: 200px;
+				width: 100%;
+				background: burlywood;
+				color: white;
+			}
+			.left{
+				height: 1500px;
+				width: 20%;
+				/*border: 1px solid red;*/
+				position: relative;
+				float: left;
+				background: beige;
+			}
+			.left>ul>li{
+				margin-top: 20px;
+			}
+			.content{
+					height: 1500px;
+				width: 70%;
+				/*border: 1px solid red;*/
+				position: absolute;
+				left: 21%;
+					float: left;
+			}
+			.content>ul>li{
+				margin-top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<header>
+				头部
+			</header>
+			<div class="left">
+				<ul class="ul2">
+					<li>左侧栏</li>
+					<li>左侧栏</li>
+					<li>左侧栏</li>
+					<li>左侧栏</li>
+					<li>左侧栏</li>
+					<li>左侧栏</li>
+				</ul>
+				<ul class="ul1">
+					
+					<li style="margin-top: 0;">左侧栏1</li>
+					<li>左侧栏1</li>
+					<li>左侧栏1</li>
+					<li>左侧栏1</li>
+					<li>左侧栏1</li>
+					<li>左侧栏1</li>
+					<li>左侧栏1</li>
+				</ul>
+			</div>
+			<div class="content">
+				<ul>
+					
+					<li>内容</li>
+					<li>内容</li>
+					<li>内容</li>
+					<li>内容</li>
+					<li>内容</li>
+					<li>内容</li>
+					<li>内容</li>
+					<li>内容</li>
+					<li>内容</li>
+					<li>内容</li>
+					<li>内容</li>
+					<li>内容</li>
+					<li>内容</li>
+					<li>内容</li>
+					<li>内容</li>
+					<li>内容</li>
+					<li>内容</li>
+					<li>内容</li>
+				
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script src="lib/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	$(function(){
+		 $(window).scroll(function(){
+		 	 console.log($(window).scrollTop())
+		 	 if($(window).scrollTop() >=0&&$(window).scrollTop() <480){
+		 	 	
+		 	 	$(".left>.ul1").removeAttr("style")
+		 	 }
+			  else if($(window).scrollTop() >=480&&$(window).scrollTop() <= 1400){
+//			    
+			     $(".left>.ul1").css({"position":'fixed',"top":'0'+'px'})
+			   }
+			   else{
+                 $(".left>.ul1").removeAttr("style")
+			   	 $(".left>.ul1").css({"position":'absolute',"bottom":'0'})
+   				}
+//			  
+	})
+		})
+	</script>
+</html>
